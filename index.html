@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>NYT || 2013</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37874293-2']);
+	  _gaq.push(['_setDomainName', 'kevinshen.net']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<div class="inset-shadow" id="tooltip">
+		<h3 id="country-name"></h3>
+		<ul>
+			<li id="total-articles"></li>
+			<li id="population"></li>
+			<li id="apc"></li>
+		</ul>
+	</div>
+	<div id="main">
+		<h1>The New York Times in 2013</h1>
+		<div id="svg-container">
+		</div>
+	</div>
+	<div id="footer">
+		<p>
+			Built by <a href="http://www.kevinshen.net">Kevin Shen</a> using <a href="http://www.d3js.org">d3.js</a>. Geographic data via <a href="http://www.naturalearthdata.com/">Natural Earth</a>. Article data from <a href="http://developer.nytimes.com/">The New York Times</a>.
+		</p>
+	</div>
+	<!--
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/queue.v1.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	-->
+	<script src="js/lib/jquery-1.9.1.min.js"></script>
+	<!--<script src="js/lib/d3.v3.min.js"></script>-->
+	<script src="js/lib/d3.js"></script>
+	<script src="js/lib/d3.geo.zoom.js"></script>
+	<script src="js/lib/queue.v1.min.js"></script>
+	<script src="js/lib/topojson.v1.min.js"></script>
+	<script src="js/world_map.js"></script>
+
+</body>

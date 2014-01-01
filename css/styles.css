@@ -1,0 +1,101 @@
+body {
+  font: small Georgia, serif;
+  font-family: 'Georgia', serif;
+  background: url(../img/textured_paper.png) repeat;
+  margin-left: 0px;
+}
+
+#main {
+  position: relative;
+  margin: 0 auto 0 auto;
+  width: 900px;
+}
+
+#main h1 {
+  margin: 0 auto;
+  color: #141414;
+  text-align: center;
+}
+
+#svg-container {
+  margin: 0 auto;
+  position: relative;
+  height: 700px;
+  width: 754px;
+
+}
+
+#footer {
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+
+#footer p {
+  margin: 15px auto;
+  text-align: center;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+#footer a:link {
+  color: #314C72;
+  text-decoration: none;
+}
+#footer a:active {
+  color: #314C72;
+  text-decoration: none;
+}
+#footer a:visited {
+  color: #273C5A;
+  text-decoration: none;
+}
+
+.place-dot {
+  fill: #F7FAB1;
+  /*opacity: 0.9;*/
+}
+
+svg {
+  fill: none;
+  font: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica', 'Arial', 'sans-serif';
+  font-size: 10pt; 
+  opacity: 0;
+  /*
+	fill: #DAE7E7;
+  */
+}
+
+.subunit { 
+  fill: #000; 
+  fill: #273C5A;
+}
+
+#tooltip {
+  display: none;
+  font-family: 'Helvetica', 'Arial', 'sans-serif';
+  font-size: 10pt; 
+  /*
+  height: 200px;
+  width: 200px;
+  */
+  position: absolute;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.inset_shadow {
+  -moz-box-shadow: inset 0 0px 5px -1px #000; 
+  -webkit-box-shadow: inset 0px 0px 5px -1px #000; 
+  box-shadow: inner 0px 0px 5px -1px #000; 
+}
+
+/*
+.subunit-boundary {
+  fill: none;
+  stroke: #DAE7E7;
+  stroke-linejoin: round;
+}
+*/
