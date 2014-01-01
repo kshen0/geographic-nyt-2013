@@ -63,8 +63,6 @@ function renderMap() {
     .domain([0.0000001, 0.0087])
     .range([0.2, 1]);
 
-  //var maxCapita = 0;
-
   // Draw countries of the world
   /*
   svg.append("path")
@@ -75,12 +73,8 @@ function renderMap() {
 
 
   var svgc = $("#svg-container");
-  d3.geo.zoom(projection);
+  //d3.geo.zoom(projection);
   $(svgc).mousemove(function(e) {
-    /*
-    mouseX = e.pageX - this.offsetLeft;
-    mouseY = e.pageY - this.offsetTop; 
-    */
     mouseX = e.pageX;
     mouseY = e.pageY;
     $("#tooltip").css({
