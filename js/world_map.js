@@ -63,15 +63,6 @@ function renderMap() {
     .domain([0.0000001, 0.0087])
     .range([0.2, 1]);
 
-  // Draw countries of the world
-  /*
-  svg.append("path")
-    .attr("class", "subunit")
-    .datum(topojson.object(world, world.objects.subunits_litest))
-    .attr("d", path);
-  */
-
-
   var svgc = $("#svg-container");
   $(svgc).mousemove(function(e) {
     mouseX = e.pageX;
@@ -136,28 +127,23 @@ function renderMap() {
       var pop = populations[d.id];
       var articlesPerCapita = articleCount / (pop / 1000000);
       articlesPerCapita = Number(articlesPerCapita).toFixed(2);
-      var description = "<p>" + d.id + ": " + articleCount + " total articles, " + articlesPerCapita + " articles per capita</p>";
       $("#country-name").html(d.id);
-      $("#total-articles").html("Total articles: " + articleCount);
-      $("#population").html("Population: " + pop);
-      $("#apc").html("Articles per 1 million capita: " + articlesPerCapita);
+      $("#total-articles").html("Total articles: " + numberWithCommas(articleCount));
+      $("#population").html("Population: " + numberWithCommas(pop));
+      $("#apc").html("Articles per 1 million capita: " + numberWithCommas(articlesPerCapita));
     })
     .on("mouseout", function(d) {
       $("#tooltip").css({"display": "none"});
     });
+
+    // smarter rotation
+    // http://www.jasondavies.com/maps/rotate/
     d3.select("svg")
-    .call(d3.geo.zoom().projection(projection)
+      .call(d3.geo.zoom().projection(projection)
             .on("zoom.redraw", function() {
               d3.event.sourceEvent.preventDefault();
               svg.selectAll("path").attr("d", path);
             }));
-
-    //var selection = d3.select("svg")[0];
-    //var selection = d3.select("svg");
-    //console.log(selection);
-    //d3.geo.zoom().projection(projection);
-    //z(selection);
-
 /*
     .on("click", function(d) {
       //launchRandomUrl(d.id);
@@ -173,15 +159,6 @@ function renderMap() {
       .attr("class", "subunit-boundary")
       .attr("opacity", 0);
     */
-
-  // Draw dots for countries
-  /*
-  svg.selectAll(".country-dot")
-    .data(countries.features)
-  .enter().append("path")
-    .attr("class", "country-dot")
-    .attr("d", path.pointRadius(1));
-  */
 
   // Draw dots for non-country places 
   /*
@@ -216,7 +193,7 @@ function renderMap() {
 
 };
 
-// Enable rotation
+// Enable naive rotation
 /*
 d3.select(window)
     .on("mousemove", mousemove)
@@ -283,6 +260,8 @@ function appendButtons(action, txt, id) {
 };
 
 /*
+// functions for toggling to individual story view mode if exact geographic locations are known
+// not supported in 2013 version
 function lightsOn() {
   // Background to light blue
   d3.select("body")
@@ -353,4 +332,9 @@ function launchRandomUrl(country) {
   }
 }
 */
+
+// via http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
