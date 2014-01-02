@@ -73,8 +73,6 @@ function renderMap() {
 
 
   var svgc = $("#svg-container");
-  var z = d3.geo.zoom();
-  console.log(z);
   $(svgc).mousemove(function(e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
@@ -147,6 +145,19 @@ function renderMap() {
     .on("mouseout", function(d) {
       $("#tooltip").css({"display": "none"});
     });
+    d3.select("svg")
+    .call(d3.geo.zoom().projection(projection)
+            .on("zoom.redraw", function() {
+              d3.event.sourceEvent.preventDefault();
+              svg.selectAll("path").attr("d", path);
+            }));
+
+    //var selection = d3.select("svg")[0];
+    //var selection = d3.select("svg");
+    //console.log(selection);
+    //d3.geo.zoom().projection(projection);
+    //z(selection);
+
 /*
     .on("click", function(d) {
       //launchRandomUrl(d.id);
@@ -206,9 +217,11 @@ function renderMap() {
 };
 
 // Enable rotation
+/*
 d3.select(window)
     .on("mousemove", mousemove)
     .on("mouseup", mouseup);
+    */
 
 var m0, dx, dy;
 var mousePrev = [width / 2, height / 2];
