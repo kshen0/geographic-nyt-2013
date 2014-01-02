@@ -7,8 +7,12 @@ body {
 
 #main {
   position: relative;
+  /*
   margin: 0 auto 0 auto;
   width: 900px;
+  */
+
+  width: 100%;
 }
 
 #main h1 {
@@ -18,10 +22,14 @@ body {
 }
 
 #svg-container {
+  /*
   margin: 0 auto;
-  position: relative;
   height: 700px;
   width: 754px;
+  */
+  width: 100%;
+  height: 100%;
+  position: relative;
 
 }
 

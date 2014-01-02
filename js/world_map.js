@@ -1,6 +1,11 @@
+/*
 var width = 754,
     height = 700;
+    */
 
+//var width = 1600, height = 1200;
+var width = $(window).width();
+var height = $(window).height() - $("#title").height() - $("#footer").height();
 
 var svg, projection, path;
 var TRANSITION_TIME = 400; // ms
