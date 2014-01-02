@@ -21,10 +21,6 @@ body {
   text-align: center;
 }
 
-#preview {
-  display: none;
-}
-
 #svg-container {
   /*
   margin: 0 auto;
