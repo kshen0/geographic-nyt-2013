@@ -85,13 +85,14 @@ svg {
   display: none;
   font-family: 'Helvetica', 'Arial', 'sans-serif';
   font-size: 10pt; 
+  z-index: 10;
   /*
   height: 200px;
   width: 200px;
   */
   position: absolute;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(200, 200, 200, 0.5);
 }
 
 .inset_shadow {
