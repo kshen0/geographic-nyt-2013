@@ -73,7 +73,8 @@ function renderMap() {
 
 
   var svgc = $("#svg-container");
-  //d3.geo.zoom(projection);
+  var z = d3.geo.zoom();
+  console.log(z);
   $(svgc).mousemove(function(e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
